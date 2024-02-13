@@ -4,3 +4,17 @@
   align-items: center;
   margin: 2rem;
 }
+.low {  
+  border-left: #6bebffd1 0.5rem solid ;
+  background-color: #6bebff84;
+}
+
+.medium {
+  border-left: #e3d859ec 0.5rem solid;
+  background-color: #f0e46485;
+}
+
+.high {
+  border-left: #f89494 0.5rem solid;
+  background-color: #FBB3B3;
+}

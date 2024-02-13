@@ -17,7 +17,7 @@ export default function TodoListItem(props) {
     const { importance, onTick, onDelete } = props;
     const priority = getPriority(importance);
     const isChecked = props.isDone === "true"
-    const className = `${classes.item} ${classes[priority]}
+    const className = `${classes.item} ${priority}
                        ${classes[isChecked ? 'selected' : 'unselected']}`;
     const onChangeHandler = (event) => {
         onTick(props.id, event.target.checked);

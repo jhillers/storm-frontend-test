@@ -2,66 +2,62 @@
     width: 70%;
     height: 150px;
     margin: 0 auto;
+    font-size: 14pt;
     background-color: #fcfcfc;
     padding: 1.2rem 1.6rem 2rem;
     box-shadow: 1px 4px 10px 1px #aaa;
     font-family: sans-serif;
-  }
-  
-  .form * {
-      box-sizing: border-box;
-  }
-  
-  .form input {
+}
+
+.form * {
+    box-sizing: border-box;
+}
+
+.form input {
     margin-bottom: 15px;
-  }
-  
-  .form input{
+}
+
+.form input {
     display: block;
     height: 2rem;
     padding: 6px 16px;
     width: 100%;
     border: none;
     background-color: #f3f3f3;
-  }
-  
-  .form label {
-    font-size: 1em;
-  }  
+}
 
-  .form button {
+.form label {
+    font-size: 1em;
+    padding: 1rem;
+}
+
+.form button {
     display: block;
     margin: 0.5rem;
     width: 6rem;
-    height: 2rem;    
+    height: 2rem;
     float: left;
     border-radius: 0.6rem;
     border: none;
-    color: #090808;    
-    box-shadow: 1px 4px 10px 1px #aaa;    
-  }
-  select {
+    color: #090808;
+    box-shadow: 1px 4px 10px 1px #aaa;
+}
+
+.form select {
     appearance: none;
-    outline: 0;    
-    background-image: none;
+    outline: 0;
     width: 7rem;
     height: 2rem;
     color: black;
     cursor: pointer;
     border: 1px solid black;
-    border-radius: 3px;
+    border-radius: 0.5rem;
+    padding-left: 0.7rem;
 }
 
-.select {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 2em;
-    line-height: 3;    
-    border-radius: .25em;
-    padding-bottom: 10px;
-}
 .buttonContainer {
+    display: flex;
+    justify-content: space-between;
     margin: 0.55rem;
     width: 100%;
 }

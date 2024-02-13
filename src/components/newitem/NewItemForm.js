@@ -41,7 +41,7 @@ export default function NewItemForm({ onSubmit, onCancel }) {
             <input type="text"
                 onChange={onTitleChangeHandler} id='title' />
             <label htmlFor="priority">priority</label>
-            <select onChange={onPriorityChangeHandler}
+            <select className={priority} onChange={onPriorityChangeHandler}
                 defaultValue='medium'>
                 <option value='low'>low</option>
                 <option value='medium'>medium</option>
