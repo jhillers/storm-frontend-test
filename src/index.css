@@ -3,10 +3,3 @@
   font-weight: 300;
   font-style: normal;
 }
-
-.mainContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 2rem;
-}
