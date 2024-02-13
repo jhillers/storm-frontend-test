@@ -11,10 +11,10 @@ export const sendRequest = async (method = 'GET', urlSuffix = '', body) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: body || undefined
+            body: JSON.stringify(body) || undefined
         });
         if(!response.ok){
-            throw(new Error('Error with response!'));
+            console.warn('Error with response.');
         }
         const json = response.json();
         return json;
@@ -24,6 +24,10 @@ export const sendRequest = async (method = 'GET', urlSuffix = '', body) => {
     }
 }
 export const updateTask = async (id, taskData) => {
-    const response = await sendRequest('PATCH', `/${id}`, JSON.stringify(taskData));
+    const response = await sendRequest('PATCH', `/${id}`,taskData);
+    return response;
+}
+export const addTask = async(taskData)=>{
+    const response = await sendRequest('POST',undefined, taskData);
     return response;
 }
