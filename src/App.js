@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TodoList from "./components/todo/TodoList";
-
+import './App.css'
 export default function App() {
   const [tasks, setTasks] = useState([])
   const fetchTasks = async () => {
@@ -16,5 +16,13 @@ export default function App() {
     fetchTasks();
   }, []);
 
-  return (<TodoList tasks={tasks} />)
+  return (<>
+    <div className="mainContent">
+        <h1>Todo list</h1>
+        <button>Add item</button>
+      </div>
+      <section>
+        <TodoList tasks={tasks} />
+      </section>
+  </>)
 }
