@@ -22,3 +22,9 @@
     transform: scale(2); 
     margin-right: 1rem; 
 }
+.selected{
+    opacity: 0.5;
+}
+.unselected{
+    opacity: 1;
+}
