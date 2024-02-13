@@ -39,7 +39,7 @@ module.exports = app => {
 					createdAt: new Date(),
 					updatedAt: new Date()
 				});
-				const result = await Tasks.findById(id);
+				const result = await Tasks.findByPk(id);
 				res.json(result);
 			}
 			catch(e){
