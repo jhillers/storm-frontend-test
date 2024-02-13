@@ -8,7 +8,7 @@ const port = 4000;
 const app = express();
 
 app.use(cors({ origin: 'http://localhost:3000' }));
-app.listen(port, () => {
+app.listen(port, () => {    
     clear();
     console.log(chalk.yellow(`API running on port ${port}`));
 });

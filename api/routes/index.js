@@ -19,7 +19,7 @@ module.exports = app => {
 	app.get('/api/task/:id', async (req, res) => {
 		setTimeout(async () => {
 			try {
-				const result = await Tasks.findById(req.params.id);
+				const result = await Tasks.findByPk(req.params.id);
 				res.json(result);
 			}
 			catch(e){
@@ -51,7 +51,7 @@ module.exports = app => {
 	app.patch('/api/task/:id', async (req, res) => {
 		try {
 			await Tasks.update(req.body, { where: { id: req.params.id }});
-			const data = await Tasks.findById(req.params.id);
+			const data = await Tasks.findByPk(req.params.id);
 			res.json(data);
 		}
 		catch(e){
