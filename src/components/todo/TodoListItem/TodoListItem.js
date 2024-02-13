@@ -19,9 +19,11 @@ export default function TodoListItem(props) {
    
     return (
         <li className={className}>
-            <input type="checkbox"
-            onChange={()=>props.onTick(props.id)} />
-            <label>{props.children}</label>
+           <form>
+           <input type="checkbox"
+            onChange={()=>props.onTick(props.id)} id={props.children} />
+            <label htmlFor={props.children}>{props.children}</label>
+           </form>
         </li>
 
     )
