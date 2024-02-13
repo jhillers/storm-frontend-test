@@ -1,0 +1,18 @@
+.addButton {
+    background-color: #fefefe;
+    padding-left: 0.3em;
+    border-radius: 2em;
+    height: 1rem;
+    width: 8.4rem;
+    border: solid 1px #fefefe;
+    box-shadow: 0.2em 0.2em 0.1em 0.1em #dcdbdb66;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 1.6em; 
+    font-size: 11pt;
+  }
+  
+  .addButton img {
+    margin-right: 0.1em; /* Adjust the margin between the icon and text */
+  }
