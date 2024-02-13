@@ -1,5 +1,5 @@
 import classes from "./TodoList.module.css";
-import TodoListItem from "./TodoListItem";
+import TodoListItem from "../TodoListItem/TodoListItem";
 
 export default function TodoList({ tasks }) {
     const onTickHandler = (item) => {
