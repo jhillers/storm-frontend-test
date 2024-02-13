@@ -36,21 +36,24 @@ export default function NewItemForm({ onSubmit, onCancel }) {
     }
 
     return (
-        <form className={classes.form} onSubmit={submitFormHandler}>
-            <label htmlFor='title'>title</label>
+        <form className={classes.form} onSubmit={submitFormHandler} aria-labelledby='form-title'>
+            <label htmlFor='title' id='form-title'>Title:</label>
             <input type="text"
-                onChange={onTitleChangeHandler} id='title' />
-            <label htmlFor="priority">priority</label>
-            <select className={priority} onChange={onPriorityChangeHandler}
-                defaultValue='medium'>
-                <option value='low'>low</option>
-                <option value='medium'>medium</option>
-                <option value='high'>high</option>
+                onChange={onTitleChangeHandler} id='title' tabIndex='0' />
+            <label htmlFor="priority" id="priority">Priority:</label>
+            <select className={priority}
+                onChange={onPriorityChangeHandler}
+                defaultValue='medium'
+                aria-labelledby='priority-label'
+                id="priority">
+                <option value='low'>Low</option>
+                <option value='medium'>Medium</option>
+                <option value='high'>High</option>
             </select>
-           <div className={classes.buttonContainer}>
-           <button type='button' onClick={onCancel}>Cancel</button>
-            <button type='button' onClick={submitFormHandler}>Add</button>
-           </div>
+            <div className={classes.buttonContainer}>
+                <button type='button' onClick={onCancel} aria-label="Cancel">Cancel</button>
+                <button type='button' onClick={submitFormHandler} aria-label="Add">Add</button>
+            </div>
         </form>
     )
 }

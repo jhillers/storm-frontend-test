@@ -16,15 +16,13 @@ export default function App() {
     setTasks(json);
   }
   const updateTaskHandler = async (id, data) => {
-    const response = await updateTask(id, data);
-    getTasks();
-    console.log(response);
+    await updateTask(id, data);
+    setTaskIsDone(id, data.isDone);
   }
   const newTaskHandler = async (data) => {
-    const response = await addTask(data);
+    await addTask(data);
     setAddingNewTask(false);
     getTasks();
-    console.log(response);
   }
   const deleleTaskHandler = async(id)=>{
     await deleteTask(id);
@@ -36,6 +34,17 @@ export default function App() {
   }
   const cancelNewTaskHandler = () => {
     setAddingNewTask(false);
+  }
+  const setTaskIsDone = (id, isDone) => {
+    setTasks(tasks.map(task =>{
+      if(task.id === id){
+        return {  
+          ...task,
+          isDone
+        };
+      }
+      return task;    
+    }));
   }
   useEffect(() => {
     getTasks();
