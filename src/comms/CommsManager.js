@@ -14,7 +14,7 @@ export const sendRequest = async (method = 'GET', urlSuffix = '', body) => {
             body: JSON.stringify(body) || undefined
         });
         if(!response.ok){
-            console.warn('Error with response.');
+            throw(new Error('Error with response.'));
         }
         const json = response.json();
         return json;
