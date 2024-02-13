@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from './NewItemForm.module.css';
 
-const getImportance = (priority) => {
+export const getImportance = (priority) => {
     if (priority === 'low') {
         return 2;
     }
