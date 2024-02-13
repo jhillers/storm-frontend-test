@@ -13,17 +13,21 @@ export const getPriority = importance => {
 }
 
 export default function TodoListItem(props) {
-    const { importance } = props;
+    const { importance, onTick } = props;
     const priority = getPriority(importance);
     const className = `${classes.item} ${classes[priority]}`;
-   
+    const onChangeHandler = (event) => {
+       onTick(props.id,event.target.checked);
+    }
+    console.log(props.isDone);
     return (
         <li className={className}>
-           <form>
-           <input type="checkbox"
-            onChange={()=>props.onTick(props.id)} id={props.children} />
-            <label htmlFor={props.children}>{props.children}</label>
-           </form>
+            <form>
+                <input type="checkbox"
+                    checked={props.isDone === "true"}
+                    onChange={onChangeHandler} id={props.children} />
+                <label htmlFor={props.children}>{props.children}</label>
+            </form>
         </li>
 
     )
