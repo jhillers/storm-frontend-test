@@ -2,7 +2,7 @@ import './App.css'
 import React, { useEffect, useState } from "react";
 import TodoList from "./components/todo/TodoList/TodoList";
 import AddItemButton from "./components/UI/AddItemButton";
-import { fetchTasks, updateTask, addTask } from './comms/CommsManager';
+import { fetchTasks, updateTask, addTask ,deleteTask} from './comms/CommsManager';
 import NewItemForm from './components/newitem/NewItemForm';
 export default function App() {
   const [tasks, setTasks] = useState([]);
@@ -26,6 +26,10 @@ export default function App() {
     getTasks();
     console.log(response);
   }
+  const deleleTaskHandler = async(id)=>{
+    await deleteTask(id);
+    getTasks();    
+  }
 
   const buttonClickHandler = () => {
     setAddingNewTask(true)
@@ -46,7 +50,7 @@ export default function App() {
         </div>
         <section>
           {addingNewTask &&  <NewItemForm onCancel={cancelNewTaskHandler} onSubmit={newTaskHandler} />}
-          {!isLoading && <TodoList tasks={tasks} updateTask={updateTaskHandler} />}
+          {!isLoading && <TodoList tasks={tasks} updateTask={updateTaskHandler} deleteTask={deleleTaskHandler} />}
           {isLoading && <h2>Loading...</h2>}
         </section>
       </>

@@ -1,10 +1,13 @@
 import classes from "./TodoList.module.css";
 import TodoListItem from "../TodoListItem/TodoListItem";
 
-export default function TodoList({ tasks, updateTask }) {
+export default function TodoList({ tasks, updateTask, deleteTask }) {
 
     const onTickHandler = (id, checked) => {
-        updateTask(id, {isDone: checked.toString() });
+        updateTask(id, { isDone: checked.toString() });
+    }
+    const onDeleteHandler = (id) => {
+        deleteTask(id);
     }
     return (
         <ul className={classes.container}>
@@ -14,7 +17,8 @@ export default function TodoList({ tasks, updateTask }) {
                     id={id}
                     importance={importance}
                     isDone={isDone}
-                    onTick={onTickHandler}>{title}</TodoListItem>
+                    onTick={onTickHandler}
+                    onDelete={onDeleteHandler}>{title}</TodoListItem>
             }
             )}
         </ul>

@@ -31,3 +31,7 @@ export const addTask = async(taskData)=>{
     const response = await sendRequest('POST',undefined, taskData);
     return response;
 }
+export const deleteTask = async(id)=>{
+    const response = await sendRequest('DELETE',`/${id}`);
+    return response;
+}
