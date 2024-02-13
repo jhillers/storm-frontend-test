@@ -1,57 +1,49 @@
 {
-  "name": "frontend-test-minimal",
+  "name": "storm-ideas-test",
   "version": "0.1.0",
-  "description": "",
-  "author": "stormid",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stormid/frontend-test-minimal.git"
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "clear": "^0.1.0",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "fast-async": "^6.3.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "sequelize": "^6.37.0",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.7",
+    "web-vitals": "^2.1.4"
   },
-  "bugs": {
-    "url": "https://github.com/stormid/frontend-test-minimal/issues"
-  },
-  "main": "index.js",
-  "keywords": [
-    "stormid"
-  ],
   "scripts": {
-    "api": "node api",
-    "build": "webpack --mode production",
     "db:create": "npm run db:migrate && npm run db:seed",
     "db:migrate": "node_modules/.bin/sequelize db:migrate",
     "db:seed": "node_modules/.bin/sequelize db:seed:all",
     "postinstall": "npm run db:create",
-    "start": "concurrently \"webpack-dev-server --mode development\" \"node api\"",
-    "test": "jest"
+    "start": "concurrently \"react-scripts start\" \"node api\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "jest": {
-    "testURL": "http://localhost"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "dependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-loader": "^8.0.4",
-    "body-parser": "^1.18.3",
-    "chalk": "^2.4.2",
-    "clean-webpack-plugin": "^1.0.1",
-    "clear": "^0.1.0",
-    "concurrently": "^4.0.1",
-    "cors": "^2.8.5",
-    "css-loader": "^2.1.0",
-    "express": "^4.16.4",
-    "fast-async": "^6.3.8",
-    "html-webpack-plugin": "^3.2.0",
-    "jest": "^24.0.0",
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0",
-    "sequelize": "^4.42.0",
-    "sequelize-cli": "^5.4.0",
-    "sqlite3": "^4.0.6",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

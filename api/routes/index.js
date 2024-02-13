@@ -1,5 +1,5 @@
 const { Tasks } = require('../db');
-const uuidv4 = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 const LATENCY = 500;
 
 module.exports = app => {
